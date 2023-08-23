@@ -75,9 +75,16 @@ class Room(models.Model):
 
 
 class Chat(models.Model):
+    QUESTION = True
+    ANSWER = False
 
+    IS_QUESTION = (
+        (QUESTION, 'true'),
+        (ANSWER, 'false'),
+    )
     chat = models.TextField(blank=True)
     room = models.ForeignKey(Room, related_name='chats', on_delete=models.PROTECT)
+    is_question = models.BooleanField(choices=IS_QUESTION)
 
     class Meta:
         verbose_name = 'Chat'
