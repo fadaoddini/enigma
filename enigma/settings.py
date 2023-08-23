@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mylogin.apps.MyloginConfig',
-    'category.apps.CategoryConfig',
+    'room.apps.RoomConfig',
     'rest_framework',
     'rest_framework_simplejwt',
 ]
