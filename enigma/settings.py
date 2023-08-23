@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mylogin.apps.MyloginConfig',
+    'category.apps.CategoryConfig',
     'rest_framework',
     'rest_framework_simplejwt',
 ]
@@ -111,7 +112,7 @@ TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

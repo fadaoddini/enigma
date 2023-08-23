@@ -6,6 +6,6 @@ urlpatterns = [
     path('', register_user, name='login-mobile'),
     path('verify/', verify_otp, name='verify-otp'),
     path('logout/', logouti, name='logout'),
-    path('sendOtp', SendOtp.as_view(), name='send-otp'),
-    path('verifyCode', VerifyCode.as_view(), name='send-otp'),
+    path('sendOtp/', SendOtp.as_view(), name='send-otp'),
+    path('verifyCode/', VerifyCode.as_view(), name='send-otp'),
 ]

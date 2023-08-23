@@ -1,10 +1,523 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-    <meta charset="UTF-8">
-    <title>index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--favicon icon-->
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}" type="image/png" sizes="16x16">
+
+    <!--title-->
+    <title>Engima</title>
+
+    <!--build:css-->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+    <!-- endbuild -->
 </head>
+
 <body>
-index
+
+    <!--preloader start-->
+    <div id="preloader">
+        <div class="preloader-wrap">
+            <img src="{% static 'assets/img/logo-color.png' %}" alt="لوگو" class="img-fluid">
+            <div class="thecube">
+                <div class="cube c1"></div>
+                <div class="cube c2"></div>
+                <div class="cube c4"></div>
+                <div class="cube c3"></div>
+            </div>
+        </div>
+    </div>
+    <!--preloader end-->
+    <!--header section start-->
+    <header class="header">
+        <!--start navbar-->
+        <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="{% static 'assets/img/logo-white.png' %}" alt="لوگو" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="ناوبری را تغییر دهید">
+                    <span class="ti-menu"></span>
+                </button>
+
+                <div class="collapse navbar-collapse h-auto" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto menu">
+                        <li><a href="#" class="dropdown-toggle"> خانه</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">صفحه اصلی 1</a></li>
+                                <li><a href="index-2.html">صفحه اصلی 2</a></li>
+                                <li><a href="index-3.html">صفحه اصلی 3</a></li>
+                                <li><a href="index-4.html">صفحه اصلی 4</a></li>
+                                <li><a href="index-5.html">صفحه اصلی 5</a></li>
+                                <li><a href="index-6.html">صفحه اصلی 6</a></li>
+                                <li><a href="index-7.html">صفحه اصلی 7</a></li>
+                                <li><a href="index-8.html">صفحه اصلی 8</a></li>
+                                 <li><a href="index-9.html">صفحه اصلی 9</a></li>
+                               <li><a href="index-10.html">صفحه اصلی 10</a></li>
+                                <li><a href="index-11.html">صفحه اصلی 11</a></li>
+                                <li><a href="index-12.html">صفحه اصلی 12 <span class="badge badge-danger">جدید</span></a></li>
+                                <li><a href="index-13.html">صفحه اصلی 13 <span class="badge badge-danger">جدید</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#about" class="page-scroll">درباره ما</a></li>
+                        <li><a href="#features" class="page-scroll">امکانات</a></li>
+                        <li><a href="#" class="dropdown-toggle">صفحات</a>
+                            <ul class="sub-menu">
+                                <li><a href="#" class="dropdown-toggle-inner">ورود و ثبت نام</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="login.html">صفحه ورود</a></li>
+                                        <li><a href="sign-up.html">صفحه ثبت نام</a></li>
+                                        <li><a href="password-reset.html">بازیابی رمز عبور</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="dropdown-toggle-inner">خدمات رفاهی</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="faq.html">صفحه پرسش و پاسخ</a></li>
+                                        <li><a href="404.html">صفحه 404</a></li>
+                                        <li><a href="coming-soon.html">به زودی</a></li>
+                                        <li><a href="thank-you.html">صفحه ممنون</a></li>
+                                        <li><a href="download.html">صفحه بارگیری <span class="badge accent-bg text-white">جدید</span></a></li>
+                                        <li><a href="review.html">صفحه بازدید <span class="badge accent-bg text-white">جدید</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="dropdown-toggle-inner">تیم</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="team.html">اعضای تیم ما</a></li>
+                                        <li><a href="team-single.html">پروفایل اعضای تیم</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="dropdown-toggle-inner">وبلاگ ما</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="blog-default.html">شبکه وبلاگ</a></li>
+                                        <li><a href="blog-no-sidebar.html">وبلاگ بدون نوار کناری</a></li>
+                                        <li><a href="blog-left-sidebar.html">وبلاگ سمت چپ</a></li>
+                                        <li><a href="blog-right-sidebar.html">وبلاگ سمت راست </a></li>
+                                        <li><a href="blog-single-left-sidebar.html">جزئیات نوار کناری سمت چپ</a></li>
+                                        <li><a href="blog-single-right-sidebar.html">جزئیات نوار کناری سمت راست</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about-us.html">درباره ما </a></li>
+                                  <li><a href="contact-us.html">با ما تماس بگیرید</a></li>
+                                <li><a href="sale-invoice.html"> فاکتور فروش <span class="badge badge-danger">جدید</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#screenshots" class="page-scroll">عکس های صفحه</a></li>
+                        <li><a href="#process" class="page-scroll">برنامه ریزی</a></li>
+                        <li><a href="#pricing" class="page-scroll">قیمت گذاری</a></li>
+                        <li><a href="#contact" class="page-scroll">تماس با ما</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--header section end-->
+
+    <div class="main">
+
+        <!--hero section start-->
+        <section class="ptb-100 bg-image overflow-hidden" image-overlay="8">
+            <div class="background-image-wraper" style="background: url('{% static 'assets/img/slider-bg-1.jpg' %}'); opacity: 1;"></div>
+            <div class="hero-bottom-shape-two" style="background: url('{% static 'assets/img/wave-shap.svg' %}')no-repeat bottom center"></div>
+            <div class="effect-1 opacity-1">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 361.1 384.8" style="enable-background:new 0 0 361.1 384.8;" xml:space="preserve" class="injected-svg svg_img dark-color">
+                    <path d="M53.1,266.7C19.3,178-41,79.1,41.6,50.1S287.7-59.6,293.8,77.5c6.1,137.1,137.8,238,15.6,288.9 S86.8,355.4,53.1,266.7z"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <div class="row align-items-center justify-content-lg-between justify-content-md-center justify-content-sm-center">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="hero-slider-content text-white py-5">
+                            <h1 class="text-white">بهترین راه برای ارتباط با مشتریان</h1>
+                            <p class="lead">به طور کلی همگرایی مهم و مهم را با سرویس قابل اعتماد مشتری به تعویق بیندازید. به طور قاطع مشارکت ایده برای راه حل های تاثیر گذار را تحت تأثیر قرار داد.</p>
+
+                            <div class="action-btns mt-4">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="d-flex align-items-center app-download-btn btn btn-brand-02 btn-rounded">
+                                            <span class="fab fa-apple icon-size-sm mr-3"></span>
+                                            <div class="download-text text-left">
+                                                <small>فرم بارگیری</small>
+                                                <h5 class="mb-0">فروشگاه برنامه</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="d-flex align-items-center app-download-btn btn btn-brand-02 btn-rounded">
+                                            <span class="fab fa-google-play icon-size-sm mr-3"></span>
+                                            <div class="download-text text-left">
+                                                <small>فرم بارگیری</small>
+                                                <h5 class="mb-0">فروشگاه گوگل</h5>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6">
+                        <div class="img-wrap">
+                            <img src="{% static 'assets/img/hero5-app.png' %}" alt="تصویر برنامه" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+        <!--hero section end-->
+
+        <!--promo section start-->
+        <section class="promo-section ptb-100 position-relative overflow-hidden">
+            <div class="effect-2 opacity-1">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 463.6 616" style="enable-background:new 0 0 463.6 616;" xml:space="preserve" class="injected-svg svg_img dark-color">
+                    <path d="M148.4,608.3C25.7,572.5-3.5,442.2,0.3,375.8s24.8-117,124.8-166.5s125.7-77.4,165-129.6 c43.2-57.4,96.5-94.4,127.9-73c63,43,53.9,280,14,358s-68.9,75.5-98.9,118.7S271,644,148.4,608.3z"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-10">
+                        <div class="section-heading">
+                            <h2>ما به شما راهنمایی می کنیم تا برنامه زیبا بسازید</h2>
+                            <p>منحصراً صلاحیت های هسته استراتژیک را با محتوای مترقی بپیچید. به طور قاطعانه بر الزامات اخلاقی و محصولات تولیدی مشروط گذار</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 single-promo-card single-promo-hover-2 p-2 mt-4">
+                            <div class="card-body">
+                                <div class="pb-2">
+                                    <span class="fas fa-concierge-bell icon-size-md color-secondary"></span>
+                                </div>
+                                <div class="pt-2 pb-3">
+                                    <h5>مدولار</h5>
+                                    <p class="mb-0">کلیه اجزا ساخته شده اند تا در ترکیب استفاده شوند.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 single-promo-card single-promo-hover-2 p-2 mt-4">
+                            <div class="card-body">
+                                <div class="pb-2">
+                                    <span class="fas fa-window-restore icon-size-md color-secondary"></span>
+                                </div>
+                                <div class="pt-2 pb-3">
+                                    <h5>پاسخگو</h5>
+                                    <p class="mb-0">سریع برای کار در اکثر دستگاه ها بهینه شده است.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 single-promo-card single-promo-hover-2 p-2 mt-4">
+                            <div class="card-body">
+                                <div class="pb-2">
+                                    <span class="fas fa-sync-alt icon-size-md color-secondary"></span>
+                                </div>
+                                <div class="pt-2 pb-3">
+                                    <h5>مقیاس پذیر</h5>
+                                    <p class="mb-0">در حین توسعه ویژگی های جدید ، سازگار باشید.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card border-0 single-promo-card single-promo-hover-2 p-2 mt-4">
+                            <div class="card-body">
+                                <div class="pb-2">
+                                    <span class="fas fa-bezier-curve icon-size-md color-secondary"></span>
+                                </div>
+                                <div class="pt-2 pb-3">
+                                    <h5>قابل تنظیم</h5>
+                                    <p class="mb-0">چند متغیر را تغییر دهید و کل موضوع اقتباس شود.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--promo section end-->
+
+
+        <!--screenshots section start-->
+        <section id="screenshots" class="screenshots-section pb-100  ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-8">
+                        <div class="section-heading text-center mb-5">
+                            <h2>عکس های برنامه ها</h2>
+                            <p>بطور فعال کانال های با ارزش افزوده را از طریق مهارت های رهبری باطن تأثیر می گذارد. به طور موثر انقلابی در شبکه های جهانی ایجاد می کند در حالی که کاتالیزورهای استراتژیک برای تغییر.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--start app screen carousel-->
+                <div class="screenshot-wrap">
+                    <div class="screenshot-frame"></div>
+                    <div class="screen-carousel owl-carousel owl-theme dot-indicator">
+                        <img src="assets/img/01.jpg" class="img-fluid" alt="عکس های صفحه">
+                        <img src="assets/img/02.jpg" class="img-fluid" alt="عکس های صفحه">
+                        <img src="assets/img/03.jpg" class="img-fluid" alt="عکس های صفحه">
+                        <img src="assets/img/04.jpg" class="img-fluid" alt="عکس های صفحه">
+                        <img src="assets/img/05.jpg" class="img-fluid" alt="عکس های صفحه">
+                        <img src="assets/img/06.jpg" class="img-fluid" alt="عکس های صفحه">
+                    </div>
+                </div>
+                <!--end app screen carousel-->
+            </div>
+        </section>
+
+
+        <!--screenshots section end-->
+
+        <!--work process start-->
+        <section id="process" class="work-process-section position-relative  ptb-100 gray-light-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-8">
+                        <div class="section-heading text-center mb-5">
+                            <h2>برنامه ریزی کار ما</h2>
+                            <p>
+                                میزبانی حرفه ای با قیمت مناسب. مجزا صلاحیت های اصلی محور را از طریق صلاحیت های اصلی مشتری محور بازآفرینی کنید.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-md-center justify-content-sm-center">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="work-process-wrap">
+                            <div class="process-single-item">
+                                <div class="process-icon-item left-shape">
+                                    <div class="d-flex align-items-center">
+                                        <div class="process-icon mr-4">
+                                            <i class="fas fa-project-diagram color-primary"></i>
+                                        </div>
+                                        <div class="process-content text-left">
+                                            <h5>ایده برنامه ریزی</h5>
+                                            <p>کاملاً معمار متا-خدمات پایدار را برای صلاحیت های هسته پردازش محور معمار می کند. با اشتیاق مجدداً برون سپاری از بهترین نژادها را مهندسی کنید.</p>
+                                        </div>
+                                    </div>
+                                    <svg x="0px" y="0px" width="312px" height="130px">
+                                        <path class="dashed1" fill="none" stroke="rgb(95, 93, 93)" stroke-width="1" stroke-dasharray="1300" stroke-dashoffset="0" d="M311.000,0.997 C311.000,0.997 313.123,123.592 214.535,79.996 C214.535,79.996 41.149,20.122 3.377,125.996"></path>
+                                        <path class="dashed2" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6" stroke-dashoffset="1300" d="M311.000,0.997 C311.000,0.997 313.123,123.592 214.535,79.996 C214.535,79.996 41.149,20.122 3.377,125.996"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="process-single-item">
+                                <div class="process-icon-item right-shape">
+                                    <div class="d-flex align-items-center">
+                                        <div class="process-icon ml-4">
+                                            <i class="fas fa-puzzle-piece color-primary"></i>
+                                        </div>
+                                        <div class="process-content text-right">
+                                            <h5>محصول نهایی توسعه یافته است</h5>
+                                            <p>آمادگی یکپارچه وب را پس از کاتالیزورهای مبتنی بر چندرسانه ای برای تغییر مهار می کنید. سیستم های جلویی کاملاً نام تجاری قبل از بینایی.</p>
+                                        </div>
+                                    </div>
+                                    <svg x="0px" y="0px" width="312px" height="130px">
+                                        <path class="dashed1" fill="none" stroke="rgb(95, 93, 93)" stroke-width="1" stroke-dasharray="1300" stroke-dashoffset="0" d="M3.121,2.028 C3.121,2.028 1.003,124.928 99.352,81.226 C99.352,81.226 272.319,21.200 310.000,127.338"></path>
+                                        <path class="dashed2" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6" stroke-dashoffset="1300" d="M3.121,2.028 C3.121,2.028 1.003,124.928 99.352,81.226 C99.352,81.226 272.319,21.200 310.000,127.338 "></path>
+                                    </svg>
+                               
+                                </div>
+                            </div>
+                            <div class="process-single-item">
+                                <div class="process-icon-item left-shape mb-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="process-icon mr-4">
+                                            <i class="fas fa-truck color-primary"></i>
+                                        </div>
+                                        <div class="process-content text-left">
+                                            <h5>تحویل به مشتری</h5>
+                                            <p>تجارت یکپارچه هم افزایی تجارت الکترونیکی به صورت یکپارچه ادبی می کند. از نظر حرفه ای محصولات تولید شده بینایی را به صورت مترقی افزایش دهید.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="img-wrap">
+                            <img src="assets/img/app-mobile-image-3.png" alt="امکانات" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--work process end-->
+
+        <!--pricing section start-->
+        <section id="pricing" class="pricing-section ptb-100 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-8">
+                        <div class="section-heading text-center mb-4">
+                            <h2>قیمت انعطاف پذیر ما</h2>
+                            <p>
+                                میزبانی حرفه ای با قیمت مناسب. مجزا صلاحیت های اصلی محور را از طریق صلاحیت های اصلی مشتری محور بازآفرینی کنید.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-md-center justify-content-center">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center text-center">
+                            <label class="pricing-switch-wrap">
+                                <span class="beforeinput year-switch text-success">
+                                ماهانه
+                            </span>
+                                <input type="checkbox" class="d-none" id="js-contcheckbox">
+                                <span class="switch-icon"></span>
+                                <span class="afterinput year-switch">
+                                    سالانه
+                            </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="text-center bg-white single-pricing-pack mt-4">
+                            <div class="price-img pt-4">
+                                <img src="assets/img/priching-img-1.png" alt="قیمت" width="120" class="img-fluid">
+                            </div>
+                            <div class="py-4 border-0 pricing-header">
+                                <div class="price text-center mb-0 monthly-price color-secondary" style="display: block;">19 تومان<span></span></div>
+                                <div class="price text-center mb-0 yearly-price color-secondary" style="display: none;">69 تومان </div>
+                            </div>
+                            <div class="price-name">
+                                <h5 class="mb-0">استاندارد</h5>
+                            </div>
+                            <div class="pricing-content">
+                                <ul class="list-unstyled mb-4 pricing-feature-list">
+                                    <li><span></span>دسترسی <span>محدود</span> به مدت یک ماه</li>
+                                    <li><span>15</span> صفحه زیر را سفارشی کنید</li>
+                                    <li class="text-deem"><span>105</span> فضای دیسک</li>
+                                    <li class="text-deem"><span>3</span> دسترسی به دامنه</li>
+                                    <li class="text-deem">پشتیبانی تلفنی 24/7</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-brand-02 btn-rounded mb-3" target="_blank">هم اکنون بخرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="popular-price bg-white text-center single-pricing-pack mt-4">
+                            <div class="price-img pt-4">
+                                <img src="assets/img/priching-img-2.png" alt="قیمت" width="120" class="img-fluid">
+                            </div>
+                            <div class="py-4 border-0 pricing-header">
+                                <div class="price text-center mb-0 monthly-price color-secondary" style="display: block;">49 تومان<span></span></div>
+                                <div class="price text-center mb-0 yearly-price color-secondary" style="display: none;">159 تومان </div>
+                            </div>
+                            <div class="price-name">
+                                <h5 class="mb-0">حق بیمه</h5>
+                            </div>
+                            <div class="pricing-content">
+                                <ul class="list-unstyled mb-4 pricing-feature-list">
+                                    <li><span></span>دسترسی <span>نامحدود</span> به مدت یک ماه</li>
+                                    <li><span>25</span> صفحه زیر را سفارشی کنید</li>
+                                    <li><span>150</span> فضای دیسک</li>
+                                    <li class="text-deem"><span>5</span> دسترسی به دامنه</li>
+                                    <li class="text-deem">پشتیبانی تلفنی 24/7</li>
+                                </ul>
+                                <a href="#" class="btn btn-brand-02 btn-rounded mb-3" target="_blank">هم اکنون بخرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="text-center bg-white single-pricing-pack mt-4">
+                            <div class="price-img pt-4">
+                                <img src="assets/img/priching-img-3.png" alt="قیمت" width="120" class="img-fluid">
+                            </div>
+                            <div class="py-4 border-0 pricing-header">
+                                <div class="price text-center mb-0 monthly-price color-secondary" style="display: block;">69 تومان<span></span></div>
+                                <div class="price text-center mb-0 yearly-price color-secondary" style="display: none;">259  تومان<span></span></div>
+                            </div>
+                            <div class="price-name">
+                                <h5 class="mb-0">نامحدود</h5>
+                            </div>
+                            <div class="pricing-content">
+                                <ul class="list-unstyled mb-4 pricing-feature-list">
+                                    <li><span></span>دسترسی <span>محدود</span> به مدت یک ماه</li>
+                                    <li><span>15</span> صفحه زیر را سفارشی کنید</li>
+                                    <li><span>120</span> فضای دیسک</li>
+                                    <li><span>5</span> دسترسی به دامنه</li>
+                                    <li>پشتیبانی تلفنی 24/7</li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-brand-02 btn-rounded mb-3" target="_blank">هم اکنون بخرید</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="support-cta text-center mt-5">
+                            <h5 class="mb-1"><span class="ti-headphone-alt color-primary mr-3"></span>ما برای راهنمایی به شما اینجا هستیم
+                            </h5>
+                            <p>سؤال دارید؟ <a href="#">اکنون با ما گپ بزنید</a> یا <a href="#">برای ارتباط با ما ایمیل بفرستید</a> .</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--pricing section end-->
+
+
+
+
+    </div>
+
+
+    <!--footer bottom copyright start-->
+    <div class="footer-bottom py-3 gray-light-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-7">
+                    <div class="copyright-wrap small-text">
+                        <p class="mb-0">© آژانس طراحی Amir.h ، کلیه حقوق محفوظ است</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="terms-policy-wrap text-lg-right text-md-right text-left">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a class="small-text" href="#">مقررات</a></li>
+                            <li class="list-inline-item"><a class="small-text" href="#">امنیت</a></li>
+                            <li class="list-inline-item"><a class="small-text" href="#">سیاست حفظ حریم خصوصی</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer bottom copyright end-->
+    <!--footer section end-->
+    <!--scroll bottom to top button start-->
+    <div class="scroll-top scroll-to-target primary-bg text-white" data-target="html">
+        <span class="fas fa-hand-point-up"></span>
+    </div>
+    <!--scroll bottom to top button end-->
+    <!--build:js-->
+
+    <script src="{% static 'assets/js/vendors/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/jquery.rcounterup.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendors/validator.min.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+    <!--endbuild-->
+
+
+
 </body>
 </html>

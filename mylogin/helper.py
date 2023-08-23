@@ -22,7 +22,7 @@ def send_otp(mobile, otp):
         "code": otp,
     }
     message_id = sms.send_pattern(
-        "o81jbnw2be3lpwl",  # pattern code
+        "lygi1tzxhtkfrhq",  # pattern code
         "+985000125475",  # originator
         mobile,  # recipient
         pattern_values,  # pattern values
