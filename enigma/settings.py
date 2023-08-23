@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mylogin.apps.MyloginConfig',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,13 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 100000000
+
+LOGIN_URL = 'mylogin'
+
+AUTH_USER_MODEL = 'mylogin.MyUser'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'mylogin.mybackend.ModelBackend',
+]
