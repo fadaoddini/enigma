@@ -12,6 +12,7 @@ from mylogin import forms, helper
 from mylogin.models import MyUser
 import json
 
+
 class RegisterView(View):
     template_name = 'web/login.html'
 
@@ -91,6 +92,11 @@ class VerifyView(View):
                           content_type=None, status=None, using=None)
 
 
+def index(request):
+    context = dict()
+    return render(request, 'web/index.html', context=context)
+
+
 def verify_otp(request):
     try:
         context = dict()
@@ -151,7 +157,7 @@ def register_user(request):
                 user.save()
                 request.session['user_mobile'] = user.mobile
                 return HttpResponseRedirect(reverse_lazy('verify-otp'))
-    return render(request, 'login/login.html', {'form': form})
+    return render(request, 'web/login.html', {'form': form})
 
 
 class SendOtp(APIView):
