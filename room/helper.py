@@ -2,10 +2,10 @@ from random import randint
 
 import openai
 
-from enigma.settings import API_OPENAI
+from enigma.settings import SECRET_OPENAI
 
 # api openai
-openai.api_key = API_OPENAI
+openai.api_key = SECRET_OPENAI
 
 
 def robot(chat):
