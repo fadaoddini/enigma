@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from room.models import Category, Chat, Topic
+from room.models import Category, Chat, Topic, Room
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -20,6 +20,12 @@ class ChatListInRoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Chat
         fields = ('id', 'chat', 'room', 'is_question')
+
+
+class RoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Room
+        fields = ('id', 'chat', 'User', 'image', 'upc', 'name', 'status', 'create_time', 'category')
 
 
 class TopicSerializer(serializers.ModelSerializer):

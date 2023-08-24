@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 from room import helper
 from room.models import Room, Category, Chat, Topic
-from room.serializers import CategorySerializer, ChatListInRoomSerializer, TopicSerializer
+from room.serializers import CategorySerializer, ChatListInRoomSerializer, TopicSerializer, RoomSerializer
 
 
 class ChatApi(APIView):
@@ -104,3 +104,35 @@ class Text2img(APIView):
             'link': answer
         }
         return Response(data, content_type='application/json; charset=UTF-8')
+
+
+class ListByUser(APIView):
+    def post(self, request, *args, **kwargs):
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        user = body['user']
+        room = Room.objects.filter(user=user).all()
+        serializer = RoomSerializer(room, many=True)
+        return Response(serializer.data, content_type='application/json; charset=UTF-8')
+
+
+class ListByUserTrue(APIView):
+    def post(self, request, *args, **kwargs):
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        user = body['user']
+        room = Room.objects.filter(user=user).filter(status=True).all()
+        serializer = RoomSerializer(room, many=True)
+        return Response(serializer.data, content_type='application/json; charset=UTF-8')
+
+
+class TrueById(APIView):
+    def post(self, request, *args, **kwargs):
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        id = body['id']
+        room = Room.objects.get(pk=id)
+        room.status = True
+        room.save()
+        serializer = Room(room)
+        return Response(serializer.data, content_type='application/json; charset=UTF-8')
