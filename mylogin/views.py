@@ -225,8 +225,8 @@ class VerifyCode(APIView):
             if not helper.check_otp_expiration(mobile):
                 messege = f"کد شما اعتبار زمانی خود را از دست داده است لطفا مجددا سعی نمائید!"
                 status = "failed"
-                refresh_token = "poooooch"
-                access_token = "poooooch"
+                refresh_token = "pooch"
+                access_token = "pooch"
                 data = {
                     'status': status,
                     'messege': messege,
