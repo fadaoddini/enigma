@@ -70,7 +70,6 @@ WSGI_APPLICATION = 'enigma.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-API_OPENAI = "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"
 
 DATABASES = {
     'default': {
