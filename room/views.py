@@ -5,8 +5,8 @@ from mylogin.models import MyUser
 from rest_framework.response import Response
 
 from room import helper
-from room.models import Room, Category, Chat
-from room.serializers import CategorySerializer, ChatListInRoomSerializer
+from room.models import Room, Category, Chat, Topic
+from room.serializers import CategorySerializer, ChatListInRoomSerializer, TopicSerializer
 
 
 class ChatApi(APIView):
@@ -83,6 +83,13 @@ class CategoryListApi(APIView):
     def get(self, request, *args, **kwargs):
         category = Category.objects.all()
         serializer = CategorySerializer(category, many=True)
+        return Response(serializer.data, content_type='application/json; charset=UTF-8')
+
+
+class TopicListApi(APIView):
+    def get(self, request, *args, **kwargs):
+        topic = Topic.objects.all()
+        serializer = TopicSerializer(topic, many=True)
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
 
 
