@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import register
 
-from room.models import Room, Category, Chat
+from room.models import Room, Category, Chat, Topic
 
 
 @register(Room)
@@ -29,6 +29,12 @@ class RoomAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'parent')
     search_fields = ('name',)
+
+
+@register(Topic)
+class TopicAdmin(admin.ModelAdmin):
+    list_display = ('name', 'prompt')
+    search_fields = ('name', 'prompt')
 
 
 @register(Chat)

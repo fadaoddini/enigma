@@ -2,9 +2,11 @@ import datetime
 from random import randint
 
 from ippanel import Client
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from mylogin import models
 from enigma.local_setting import API_MAX_SMS
+from mylogin.models import MyUser
 
 
 def create_random_otp():
@@ -42,5 +44,16 @@ def check_otp_expiration(mobile):
         return True
     except models.MyUser.DoesNotExist:
         return False
+
+
+def get_tokens_for_user(mobile):
+    user = MyUser.objects.filter(mobile=mobile).first()
+    refresh = RefreshToken.for_user(user)
+
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+        'user_id': user.id
+    }
 
 

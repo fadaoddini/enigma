@@ -84,3 +84,16 @@ class CategoryListApi(APIView):
         category = Category.objects.all()
         serializer = CategorySerializer(category, many=True)
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
+
+
+class Text2img(APIView):
+    def post(self, request, *args, **kwargs):
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        chat = body['chat']
+        answer = helper.text2img(chat)
+        # result = answer['choices'][0]['message']['content']
+        data = {
+            'link': answer
+        }
+        return Response(data, content_type='application/json; charset=UTF-8')

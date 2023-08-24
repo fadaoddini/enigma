@@ -6,9 +6,10 @@ from django.urls import reverse_lazy
 from django.views import View
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 
 from mylogin import forms, helper
+from mylogin.helper import get_tokens_for_user
 from mylogin.models import MyUser
 import json
 
@@ -222,33 +223,34 @@ class VerifyCode(APIView):
         user = MyUser.objects.filter(mobile=mobile)
         if user.exists():
             user = user.first()
+            # res = get_tokens_for_user(mobile)
+            refresh = RefreshToken.for_user(user)
+            refresh_token = str(refresh)
+            access_token = str(refresh.access_token)
             if not helper.check_otp_expiration(mobile):
                 messege = f"کد شما اعتبار زمانی خود را از دست داده است لطفا مجددا سعی نمائید!"
                 status = "failed"
-                refresh_token = "pooch"
-                access_token = "pooch"
+                refresh_token1 = "poooooch"
+                access_token1 = "poooooch"
                 data = {
                     'status': status,
                     'messege': messege,
-                    'refresh_token': refresh_token,
-                    'access_token': access_token,
+                    'refresh_token': refresh_token1,
+                    'access_token': access_token1,
                 }
                 return Response(data, content_type='application/json; charset=UTF-8')
             if user.otp != int(code):
                 messege = f"در وارد کردن کد ارسال شده بیشتر دقت کنید گویا اشتباه وارد می کنید!"
                 status = "failed"
-                refresh_token = "poooooch"
-                access_token = "poooooch"
+                refresh_token1 = "poooooch"
+                access_token1 = "poooooch"
                 data = {
                     'status': status,
                     'messege': messege,
-                    'refresh_token': refresh_token,
-                    'access_token': access_token,
+                    'refresh_token': refresh_token1,
+                    'access_token': access_token1,
                 }
                 return Response(data)
-            refresh = RefreshToken.for_user(user)
-            refresh_token = str(refresh)
-            access_token = str(refresh.access_token)
             user.is_active = True
             user.save()
             data = {
@@ -269,6 +271,7 @@ class VerifyCode(APIView):
                 'messege': messege,
                 'refresh_token': refresh_token,
                 'access_token': access_token,
+                'user_id': user.id,
             }
             return Response(data, content_type='application/json; charset=UTF-8')
 

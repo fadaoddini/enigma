@@ -82,7 +82,7 @@ DATABASES = {
     }
 }
 
-SECRET_OPENAI = API_OPENAI
+SECRET_OPENAI = SECRET_OPENAI
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

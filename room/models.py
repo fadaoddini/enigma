@@ -93,3 +93,24 @@ class Chat(models.Model):
     def __str__(self):
         return self.chat
 
+
+class Topic(models.Model):
+    ACTIVE = True
+    INACTIVE = False
+    STATUS_TYPE = (
+        (ACTIVE, 'True'),
+        (INACTIVE, 'False')
+    )
+    name = models.CharField(max_length=32)
+    prompt = models.CharField(max_length=32)
+    image = models.ImageField(upload_to='%Y/%m/%d/img-topic/', null=True, blank=True)
+    status = models.BooleanField(choices=STATUS_TYPE, default=ACTIVE)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Topic'
+        verbose_name_plural = 'Topics'
+
+    def __str__(self):
+        return self.name
+
