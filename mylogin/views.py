@@ -251,6 +251,7 @@ class VerifyCode(APIView):
                     'access_token': access_token1,
                 }
                 return Response(data)
+            userid = user.pk
             user.is_active = True
             user.save()
             data = {
@@ -258,6 +259,7 @@ class VerifyCode(APIView):
                 'messege': messege,
                 'refresh_token': refresh_token,
                 'access_token': access_token,
+                'user_id': userid,
             }
             return Response(data, content_type='application/json; charset=UTF-8')
 
@@ -270,8 +272,7 @@ class VerifyCode(APIView):
                 'status': status,
                 'messege': messege,
                 'refresh_token': refresh_token,
-                'access_token': access_token,
-                'user_id': user.id,
+                'access_token': access_token
             }
             return Response(data, content_type='application/json; charset=UTF-8')
 
