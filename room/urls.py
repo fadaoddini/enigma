@@ -1,6 +1,7 @@
 from django.urls import path, re_path
 
-from room.views import ChatApi, CategoryListApi, RoomApi, Text2img, TopicListApi, ListByUser, ListByUserTrue, TrueById
+from room.views import ChatApi, CategoryListApi, RoomApi, Text2img, TopicListApi, ListByUser, ListByUserTrue, TrueById, \
+    ListTrue
 
 urlpatterns = [
     path('newchat', ChatApi.as_view(), name='chat'),
@@ -10,5 +11,6 @@ urlpatterns = [
     path('topiclist', TopicListApi.as_view(), name='topic-list'),
     path('listbyuser', ListByUser.as_view(), name='listbyuser'),
     path('listbyusertrue', ListByUserTrue.as_view(), name='listbyusertrue'),
+    path('listtrue', ListTrue.as_view(), name='listtrue'),
     path('truebyid', TrueById.as_view(), name='truebyid'),
 ]

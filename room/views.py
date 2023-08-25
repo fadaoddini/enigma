@@ -126,6 +126,13 @@ class ListByUserTrue(APIView):
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
 
 
+class ListTrue(APIView):
+    def post(self, request, *args, **kwargs):
+        room = Room.objects.filter(status=True).all()
+        serializer = RoomSerializer(room, many=True)
+        return Response(serializer.data, content_type='application/json; charset=UTF-8')
+
+
 class TrueById(APIView):
     def post(self, request, *args, **kwargs):
         body_unicode = request.body.decode('utf-8')

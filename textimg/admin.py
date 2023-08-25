@@ -1,3 +1,10 @@
 from django.contrib import admin
+from django.contrib.admin import register
 
-# Register your models here.
+from textimg.models import Textimg
+
+
+@register(Textimg)
+class TextimgAdmin(admin.ModelAdmin):
+    list_display = ('chat', 'link', 'user', 'status')
+

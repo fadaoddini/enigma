@@ -53,6 +53,13 @@ class ListByUserTrue(APIView):
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
 
 
+class ListTrue(APIView):
+    def post(self, request, *args, **kwargs):
+        textimg = Textimg.objects.filter(status=True).all()
+        serializer = TextimgSerializer(textimg, many=True)
+        return Response(serializer.data, content_type='application/json; charset=UTF-8')
+
+
 class TrueById(APIView):
     def post(self, request, *args, **kwargs):
         body_unicode = request.body.decode('utf-8')
