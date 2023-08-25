@@ -23,9 +23,16 @@ class ChatListInRoomSerializer(serializers.ModelSerializer):
 
 
 class RoomSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+
     class Meta:
         model = Room
-        fields = ('id', 'chat', 'User', 'image', 'upc', 'name', 'status', 'create_time', 'category')
+        fields = ('id', 'user', 'image', 'upc', 'name', 'status', 'create_time', 'category')
+
+    def get_name(self, obj):
+        name = obj.name
+        name = name
+        return name
 
 
 class TopicSerializer(serializers.ModelSerializer):

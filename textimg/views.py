@@ -38,6 +38,7 @@ class ListByUser(APIView):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
         user = body['user']
+        user = MyUser.objects.filter(pk=user).first()
         textimg = Textimg.objects.filter(user=user).all()
         serializer = TextimgSerializer(textimg, many=True)
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
@@ -48,6 +49,7 @@ class ListByUserTrue(APIView):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
         user = body['user']
+        user = MyUser.objects.filter(pk=user).first()
         textimg = Textimg.objects.filter(user=user).filter(status=True).all()
         serializer = TextimgSerializer(textimg, many=True)
         return Response(serializer.data, content_type='application/json; charset=UTF-8')

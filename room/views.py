@@ -111,6 +111,7 @@ class ListByUser(APIView):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
         user = body['user']
+        user = MyUser.objects.filter(pk=user).first()
         room = Room.objects.filter(user=user).all()
         serializer = RoomSerializer(room, many=True)
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
@@ -121,6 +122,7 @@ class ListByUserTrue(APIView):
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
         user = body['user']
+        user = MyUser.objects.filter(pk=user).first()
         room = Room.objects.filter(user=user).filter(status=True).all()
         serializer = RoomSerializer(room, many=True)
         return Response(serializer.data, content_type='application/json; charset=UTF-8')
