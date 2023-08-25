@@ -10,7 +10,6 @@ openai.api_key = SECRET_OPENAI
 
 
 def text2img(chat):
-    chat = translate(chat)
     chatgpt_r = openai.Image.create(
         prompt=chat,
         n=1,
